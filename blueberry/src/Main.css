@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./img/bg.jpg);
+}
+
+.plus {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2600ff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.header {
+  position: absolute;
+  display: table;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: 'Do Hyeon', sans-serif;
+  color: rgb(231, 231, 231);
+  vertical-align: text-bottom;
+  top: 10px;
+  left: 20px;
+  z-index: 1;
+}
+
+.headerInner {
+  display: table-cell;
+  font-size: 36px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.popupWrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 2;
+}
+
+.popup {
+  width: 360px;
+  height: 450px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+}
+
+.xButton {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-color: rgb(235, 235, 235);
+  line-height: 30px;
+  font-weight: 700;
+  color: black;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 5px;
+  margin: 5px 5px 0 auto;
+  cursor: pointer;
+}
+
+.xButton:hover {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.popupName {
+  margin-top: 86px;
+  align-self: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.popupInput { 
+  width: 260px;
+  height: 40px;
+  align-self: center;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+.popupInput::-webkit-outer-spin-button,
+.popupInput::-webkit-inner-spin-button{
+  appearance: none;
+  margin: 0;
+}
+
+.popupInput:focus, .popupButton:focus, .startButton:focus {
+  outline: none;
+}
+
+.popupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.popupButton {
+  align-self: center;
+  width: 200px;
+  height: 60px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, #3d0af5, #370ada);
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.popupButton:hover, .plus:hover, .startButton:hover {
+  box-shadow: 0 0 0 0;
+}
+
+.codeName {
+  font-size: 100px;
+  font-weight: 600;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 1;
+}
+
+.users {
+  color: white;
+  font-weight: 600;
+  font-size: 60px;
+  display: flex;
+  margin: 330px auto 0 auto;
+}
+
+#root {
+  display: flex;
+}
+
+.usersName {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.startButton {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 100px;
+  font-weight: 600;
+  font-size: 44px;
+  border-radius: 30px;
+  border: none;
+  color: rgb(53, 53, 53);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.realtime {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100000;
+  background-image: url(./img/bg.jpg);
+}
+
+.seats {
+  width: 22.5vw;
+  height: 7vh;
+  color: rgb(143, 143, 143);
+  font-size: 44px;
+  font-weight: 600;
+  text-align: center;
+  padding: 3.5vh 0;
+  margin: 10px;
+  background-color: white;
+  float: left;
+  color: black;
+}
+
+.raeltimeWrapper {
+  width: 99vw;
+  height: 97vh;
+  margin: auto auto;
+}
+
+.buttonEnd {
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100001;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.buttonEnd:hover {
+  box-shadow: 0 0 0 0;
+}
+
+embed {
+  display: none;
+}
