@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: url(./img/bg.jpg);
+  font-family: 'yg-jalnan';
 }
 
 .plus {
@@ -15,8 +25,8 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #2600ff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff34;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   position: absolute;
   right: 30px;
   top: 30px;
@@ -27,6 +37,9 @@ body {
   color: white;
   cursor: pointer;
   z-index: 1;
+  transition: box-shadow 0.25s linear;
+  color: #ffffffe0;
+  font-family: nanum;
 }
 
 .header {
@@ -60,7 +73,7 @@ body {
 .popup {
   width: 360px;
   height: 450px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -69,7 +82,6 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.7;
 }
 
 .xButton {
@@ -87,6 +99,8 @@ body {
   margin-right: 5px;
   margin: 5px 5px 0 auto;
   cursor: pointer;
+  transition: box-shadow 0.25s linear;
+  font-family: nanum;
 }
 
 .xButton:hover {
@@ -133,16 +147,18 @@ body {
   margin-top: 40px;
   border: none;
   border-radius: 15px;
-  background: linear-gradient(to bottom, #3d0af5, #370ada);
+  background: #7b61c4;
   color: white;
   font-size: 26px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s linear;
+  font-family: 'yg-jalnan';
 }
 
 .popupButton:hover, .plus:hover, .startButton:hover {
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .codeName {
@@ -169,13 +185,30 @@ body {
 }
 
 .usersName {
+  width: 70vw;
+  height: 200px;
   position: absolute;
   color: white;
   font-size: 30px;
   font-weight: 600;
-  bottom: 300px;
+  bottom: 270px;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+}
+
+@media screen and (max-height: 880px) {
+  .usersName {
+    height: 100px;
+  }
+}
+
+@media screen and (max-height: 790px) {
+  .usersName {
+    height: 50px;
+  }
 }
 
 .startButton {
@@ -192,6 +225,8 @@ body {
   color: rgb(53, 53, 53);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: box-shadow 0.2s linear;
+  font-family: 'yg-jalnan';
 }
 
 .realtime {
@@ -203,24 +238,123 @@ body {
 }
 
 .seats {
-  width: 22.5vw;
-  height: 7vh;
+  width: 355px;
+  height: 14vh;
   color: rgb(143, 143, 143);
   font-size: 44px;
   font-weight: 600;
   text-align: center;
-  padding: 3.5vh 0;
+  line-height: 14vh;
   margin: 10px;
   background-color: white;
   float: left;
   color: black;
+  border-radius: 13px;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+  font-size: 65px;
 }
 
 .raeltimeWrapper {
-  width: 99vw;
+  width: 1500px;
   height: 97vh;
   margin: auto auto;
 }
+
+@media screen and (max-width: 599px) {
+  .seats {
+    width: 100px;
+    height: 14vh;
+    color: rgb(143, 143, 143);
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14vh;
+    margin: 10px;
+    background-color: white;
+    float: left;
+    color: black;
+    border-radius: 13px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+  }
+  .raeltimeWrapper {
+    width: 480px;
+    height: 97vh;
+    margin: auto auto;
+  }
+} 
+
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .seats {
+    width: 130px;
+    height: 14vh;
+    color: rgb(143, 143, 143);
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14vh;
+    margin: 10px;
+    background-color: white;
+    float: left;
+    color: black;
+    border-radius: 13px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    font-size: 38px;
+  }
+  .raeltimeWrapper {
+    width: 600px;
+    height: 97vh;
+    margin: auto auto;
+  }
+} 
+
+@media screen and (max-width: 1000px) and (min-width: 801px) {
+  .seats {
+    width: 173px;
+    height: 14vh;
+    color: rgb(143, 143, 143);
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14vh;
+    margin: 10px;
+    background-color: white;
+    float: left;
+    color: black;
+    border-radius: 13px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    font-size: 47px;
+  }
+  .raeltimeWrapper {
+    width: 800px;
+    height: 97vh;
+    margin: auto auto;
+  }
+} 
+
+@media screen and (max-width: 1500px) and (min-width: 1001px) {
+  .seats {
+    width: 233px;
+    height: 14vh;
+    color: rgb(143, 143, 143);
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14vh;
+    margin: 10px;
+    background-color: white;
+    float: left;
+    color: black;
+    border-radius: 13px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    font-size: 55px;
+  }
+  .raeltimeWrapper {
+    width: 1020px;
+    height: 97vh;
+    margin: auto auto;
+  }
+} 
 
 .buttonEnd {
   width: 100px;
@@ -237,11 +371,8 @@ body {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.2s linear;
 }
 .buttonEnd:hover {
   box-shadow: 0 0 0 0;
-}
-
-embed {
-  display: none;
 }

@@ -1,6 +1,7 @@
-import React, { useState, useRef, memo } from 'react';
+import React, { useState, memo } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Motion, spring } from 'react-motion';
+import { Helmet } from 'react-helmet'
 import './Main.css';
 
 import firebase from 'firebase'
@@ -68,6 +69,10 @@ const Main = memo( () => {
   const onSubmitPeople = (e) => {
     e.preventDefault()
     if(window.confirm(value+'명이 맞습니까?') === true) {
+      if(value === '') {
+        alert('인원수를 확인해 보세요.')
+        return false
+      }
       setPopup(false)
       let codeName = getCode()
       setCode(codeName)
@@ -111,6 +116,9 @@ const Main = memo( () => {
 
   return (
     <BrowserRouter>
+      <Helmet>
+        <title>BlueBerry</title>
+      </Helmet>
       <Motion defaultStyle={{left: -10, opacity: 0}} style={{left: spring(20, motionPosition), opacity: spring(1, motionOpacity)}}>
         {
           (style) => (<div style={{opacity: style.opacity, left: style.left}} className="header">
@@ -156,11 +164,11 @@ const Main = memo( () => {
         state === true && (
           <div className="realtime">  
             <div className="raeltimeWrapper">
-              {seats.map((v, i) => {
-                return (
-                  <div key={i} className="seats">{v}</div>
-                )
-              })}
+                {seats.map((v, i) => {
+                  return (
+                    <div key={i} className="seats">{v}</div>
+                  )
+                })}
             </div>
             <button className="buttonEnd" onClick={onClickEnd}>종료</button>
           </div>
